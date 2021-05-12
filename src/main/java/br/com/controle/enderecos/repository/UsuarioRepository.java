@@ -1,0 +1,13 @@
+package br.com.controle.enderecos.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.com.controle.enderecos.model.Usuario;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+	
+	boolean existsByCpfOrEmail(String cpf, String email);
+	
+}
